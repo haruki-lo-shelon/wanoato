@@ -5,11 +5,21 @@
 <%= link_to "コース開拓へ", new_course_path %>
 <div class="courses-container">
   <% @courses.each do |t| %>
-    <div class="course">
-      <%= t.course_name %>
-      <%= t.area %>
-      <%= t.feature %>
-      <%= t.created_at %>
+    <div class="wanoato">
+      <div class="main-box">
+        <div class="left-container">
+          <%= t.course_name %>
+          <%= t.area %>
+          <%= t.feature %>
+          <%= t.created_at %>
+        </div>
+        <div class="right-container">
+          <%= link_to "詳細", tweet_path(t.id) %>
+          <%= link_to "編集", edit_tweet_path(t.id) %>
+          <%= link_to "削除", tweet_path(t.id), method: :delete %>
+        </div>
+      </div>
+    <p class="time"><%= t.created_at %></p>
     </div>
   <% end %>
 </div>
