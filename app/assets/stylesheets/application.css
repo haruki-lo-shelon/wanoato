@@ -25,15 +25,18 @@ header a {
   text-decoration: none; 
 }
 header h1 {
+  background-color: #CCFFD1;
   margin-left: 20px;
   color: white;
 }
 .header-list {
+  background-color: #CCFFD1;
   display: flex;
   align-items: center;
 }
 header ul {
-  display: flex; 
+  display: flex;
+  color: white;
 }
 header li {
   list-style: none;
