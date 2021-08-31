@@ -30,11 +30,11 @@ header h1 {
   color: white;
 }
 .header-list {
-  background-color: #466940;
   display: flex;
   align-items: center;
 }
 header ul {
+  background-color: #466940;
   display: flex;
   color: white;
 }
