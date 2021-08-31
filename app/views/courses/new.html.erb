@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag 'new', :media => "all" %>
 
+<div class="new">
 <h3>新規コース</h3>
 <%= form_for @course do |f| %>
   <div class="field">
@@ -74,3 +75,5 @@
 <% end %>
 
 <%= link_to "コース一覧に戻る", courses_path %>
+
+</div>

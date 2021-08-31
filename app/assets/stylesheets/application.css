@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  background-color: #CCFFD1;
 }
 body {
   min-height: 100vh;
@@ -12,7 +13,7 @@ body {
   min-height: 100vh;
 }
 header {
-  background-color: #00acee;
+  background-color: #466940;
   height: 80px;
   font-weight: bold;
   display: flex;

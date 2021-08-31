@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag 'index', :media => "all" %>
 
+<div class="index">
 <h3>コース一覧</h3>
 <%= link_to "コース開拓へ", new_course_path %>
 <div class="courses-container">
@@ -11,4 +12,5 @@
       <%= t.created_at %>
     </div>
   <% end %>
+</div>
 </div>
