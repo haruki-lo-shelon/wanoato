@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   
   def index
-    @course = Course.all
+    @courses = Course.all
   end
 
   def new
