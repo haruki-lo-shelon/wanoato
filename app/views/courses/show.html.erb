@@ -1,2 +1,14 @@
-<h1>Courses#show</h1>
-<p>Find me in app/views/courses/show.html.erb</p>
+<%= stylesheet_link_tag 'show', :media => "all" %>
+
+<div class="show">
+  <h3>コース詳細</h3>
+  <div class="course">
+    <h4><%= @course.course_name %></h4>
+    <p><%= @course.area %></p>
+    <p><%= @course.feature %></p>
+    <p><%= @course.created_at %></p>
+  </div>
+  
+  <%= link_to "コース一覧に戻る", courses_path %>
+  <%= link_to "編集する", edit_course_path(@course.id) %>
+</div>

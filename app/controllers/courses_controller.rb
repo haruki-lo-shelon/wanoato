@@ -11,9 +11,20 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @course = Course.find(params[:id])
   end
 
   def edit
+    @course = Course.find(params[:id])
+  end
+  
+  def update
+    course = Course.find(params[:id])
+    if course.update(course_params)
+      redirect_to :action => "show", :id => course.id
+    else
+      redirect_to :action => "new"
+    end
   end
   
   def create
