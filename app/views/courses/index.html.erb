@@ -14,9 +14,9 @@
           <%= t.created_at %>
         </div>
         <div class="right-container">
-          <%= link_to "詳細", tweet_path(t.id) %>
-          <%= link_to "編集", edit_tweet_path(t.id) %>
-          <%= link_to "削除", tweet_path(t.id), method: :delete %>
+          <%= link_to "詳細", course_path(t.id) %>
+          <%= link_to "編集", edit_course_path(t.id) %>
+          <%= link_to "削除", course_path(t.id), method: :delete %>
         </div>
       </div>
     <p class="time"><%= t.created_at %></p>
