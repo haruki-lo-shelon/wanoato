@@ -25,12 +25,12 @@ header a {
   text-decoration: none; 
 }
 header h1 {
-  background-color: #CCFFD1;
+  background-color: #466940;
   margin-left: 20px;
   color: white;
 }
 .header-list {
-  background-color: #CCFFD1;
+  background-color: #466940;
   display: flex;
   align-items: center;
 }
