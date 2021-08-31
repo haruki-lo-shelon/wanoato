@@ -39,9 +39,11 @@ header ul {
   color: white;
 }
 header li {
-  background-color: #466940;
   list-style: none;
   margin-right: 40px;
+}
+header a {
+  background-color: #466940;
 }
 footer {
   color: white;
