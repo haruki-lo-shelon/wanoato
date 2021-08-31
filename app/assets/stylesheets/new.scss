@@ -1,0 +1,21 @@
+.tweets-container {
+  width: 50%;
+  margin: 10px auto;
+}
+h3 {
+  margin-bottom: 30px;
+}
+.tweet {
+  border-top: solid #00acee;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+.main-box {
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.time {
+  display: flex;
+  justify-content: flex-end;
+}
