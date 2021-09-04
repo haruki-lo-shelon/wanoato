@@ -13,19 +13,19 @@
           <%= t.area %>
         </div>
         <div class="right-container">
-          <% if user_signed_in? %>
-            <% if current_user.already_liked?(t) %>
-              <%= link_to course_like_path(id: t.id, course_id: t.id), method: :delete do %>
-                <p>いいねを取り消す</p><%= t.likes.count %>
-              <% end %>
-            <% else %>
-              <%= link_to course_likes_path(id: t.id, course_id: t.id), method: :post do %>
-                <p>いいね</p><%= t.likes.count %>
-              <% end %>
-            <% end %>
-          <% else %>
-            <p>いいねの数 = </p><%= t.likes.count %>
-          <% end %>
+          <!--<% if user_signed_in? %>-->
+          <!--  <% if current_user.already_liked?(t) %>-->
+          <!--    <%= link_to course_like_path(id: t.id, course_id: t.id), method: :delete do %>-->
+          <!--      <p>いいねを取り消す</p><%= t.likes.count %>-->
+          <!--    <% end %>-->
+          <!--  <% else %>-->
+          <!--    <%= link_to course_likes_path(id: t.id, course_id: t.id), method: :post do %>-->
+          <!--      <p>いいね</p><%= t.likes.count %>-->
+          <!--    <% end %>-->
+          <!--  <% end %>-->
+          <!--<% else %>-->
+          <!--  <p>いいねの数 = </p><%= t.likes.count %>-->
+          <!--<% end %>-->
           <%= link_to "詳細", course_path(t.id) %>
           <% if user_signed_in? && current_user.id == t.user_id %>
             <%= link_to "編集", edit_course_path(t.id) %>
