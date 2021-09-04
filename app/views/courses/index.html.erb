@@ -15,15 +15,15 @@
           <% if user_signed_in? %>
             <% if current_user.already_liked?(t) %>
               <%= link_to course_like_path(id: t.id, course_id: t.id), method: :delete do %>
-                <i class="fas fa-heart"></i><%= t.likes.count %>
+                <p>いいねを取り消す</p><%= t.likes.count %>
               <% end %>
             <% else %>
               <%= link_to course_likes_path(id: t.id, course_id: t.id), method: :post do %>
-                <i class="far fa-heart"></i><%= t.likes.count %>
+                <p>いいね</p><%= t.likes.count %>
               <% end %>
             <% end %>
           <% else %>
-            <i class="far fa-heart"></i><%= t.likes.count %>
+            <p>いいねの数 = </p><%= t.likes.count %>
           <% end %>
           <%= link_to "詳細", course_path(t.id) %>
           <% if user_signed_in? && current_user.id == t.user_id %>

@@ -11,15 +11,15 @@
     <% if user_signed_in? %>
       <% if current_user.already_liked?(@course) %>
           <%= link_to course_like_path(@course), method: :delete do %>
-             <i class="fas fa-heart"></i><%= @course.likes.count %>
+             <p>いいねを取り消す</p><%= @course.likes.count %>
           <% end %>
       <% else %>
           <%= link_to course_likes_path(@course), method: :post do %>
-             <i class="far fa-heart"></i><%= @course.likes.count %>
+             <p>いいね</p><%= @course.likes.count %>
           <% end %>
       <% end %>
   <% else %>
-      <i class="far fa-heart"></i><%= @course.likes.count %>
+      <p>いいねの数 = </p><%= @course.likes.count %>
   <% end %>
   </div>
   
