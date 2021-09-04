@@ -33,7 +33,7 @@ class CoursesController < ApplicationController
     course.user_id = current_user.id
     
     if course.save
-      redirect_to :action => "index"
+      redirect_to :action => "new"
     else
       redirect_to :action => "new"
     end
