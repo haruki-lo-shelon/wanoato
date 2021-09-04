@@ -37,8 +37,8 @@ class CoursesController < ApplicationController
   end
   
   def destroy
-    tweet = Tweet.find(params[:id])
-    tweet.destroy
+    course = Course.find(params[:id])
+    course.destroy
     redirect_to action: :index
   end
 
