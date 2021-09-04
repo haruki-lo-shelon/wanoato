@@ -9,7 +9,19 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
   end
-
+  
+  def create
+    course = Course.new(course_params)
+    
+    course.user_id = current_user.id
+    
+    if course.save
+      redirect_to :action => "index"
+    else
+      redirect_to :action => "new"
+    end
+  end
+  
   def show
     @course = Course.find(params[:id])
   end
@@ -22,18 +34,6 @@ class CoursesController < ApplicationController
     course = Course.find(params[:id])
     if course.update(course_params)
       redirect_to :action => "show", :id => course.id
-    else
-      redirect_to :action => "new"
-    end
-  end
-  
-  def create
-    course = Course.new(course_params)
-    
-    course.user_id = current_user.id
-    
-    if course.save
-      redirect_to :action => "new"
     else
       redirect_to :action => "new"
     end
