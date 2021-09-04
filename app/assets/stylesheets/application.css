@@ -27,6 +27,7 @@ header a {
 header h1 {
   background-color: #466940;
   margin-left: 20px;
+  font-family: HGP行書体;
   color: white;
 }
 .header-list {
