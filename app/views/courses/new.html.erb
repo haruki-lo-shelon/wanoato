@@ -2,7 +2,7 @@
 
 <div class="new">
 <h3>新規コース</h3>
-<%= form_for(@course, :url => { controller:'courses', action:'create'}) do |f| %>
+<%= form_for(@course, :url => { controller:'courses', action:'create'})do |f| %>
   <div class="course-name">
     <%= f.label :コース名 %>
     <%= f.text_field :course_name, :size => 30 %>
