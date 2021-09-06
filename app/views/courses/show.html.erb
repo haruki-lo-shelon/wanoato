@@ -8,19 +8,19 @@
     <p><%= @course.feature %></p>
     <p><%= @course.created_at %></p>
     
-    <% if user_signed_in? %>
-      <% if current_user.already_liked?(@course) %>
-          <%= link_to course_like_path(@course), method: :delete do %>
-             <p>いいねを取り消す</p><%= @course.likes.count %>
-          <% end %>
-      <% else %>
-          <%= link_to course_likes_path(@course), method: :post do %>
-             <p>いいね</p><%= @course.likes.count %>
-          <% end %>
-      <% end %>
-  <% else %>
-      <p>いいねの数 = </p><%= @course.likes.count %>
-  <% end %>
+  <!--  <% if user_signed_in? %>-->
+  <!--    <% if current_user.already_liked?(@course) %>-->
+  <!--        <%= link_to course_like_path(@course), method: :delete do %>-->
+  <!--           <p>いいねを取り消す</p><%= @course.likes.count %>-->
+  <!--        <% end %>-->
+  <!--    <% else %>-->
+  <!--        <%= link_to course_likes_path(@course), method: :post do %>-->
+  <!--           <p>いいね</p><%= @course.likes.count %>-->
+  <!--        <% end %>-->
+  <!--    <% end %>-->
+  <!--<% else %>-->
+  <!--    <p>いいねの数 = </p><%= @course.likes.count %>-->
+  <!--<% end %>-->
   </div>
   
   <h4>いいねしたユーザー</h4>
