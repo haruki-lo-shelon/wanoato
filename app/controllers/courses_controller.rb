@@ -3,13 +3,12 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   
   def index
-    if params[:search] == nil
-        @courses= Course.all
-      elsif params[:search] == ''
-        @courses= Course.all
+    if params[:search] != nil && params[:search] != ''
+        #部分検索かつ複数検索
+        search = params[:search]
+        @courses = Course.joins(:user).where("area LIKE ? OR course_name LIKE ?", "%#{search}%", "%#{search}%")
       else
-        #部分検索
-        @courses = Course.where("area LIKE ? ",'%' + params[:search] + '%')
+        @courses = Course.all
       end
   end
 
