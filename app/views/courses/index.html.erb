@@ -10,6 +10,10 @@
 <% end %>
 
 <%= link_to "コース開拓へ", new_course_path %>
+
+<br>
+<%= page_entries_info @courses %>
+
 <div class="courses-container">
   <% @courses.each do |t| %>
     <div class="wanoato">
@@ -44,4 +48,7 @@
     </div>
   <% end %>
 </div>
+
+<%= paginate @courses %>
+
 </div>
