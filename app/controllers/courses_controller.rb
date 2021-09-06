@@ -3,7 +3,14 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   
   def index
-    @courses = Course.all
+    if params[:search] == nil
+        @courses= Course.all
+      elsif params[:search] == ''
+        @courses= Course.all
+      else
+        #部分検索
+        @courses = Course.where("area LIKE ? ",'%' + params[:search] + '%')
+      end
   end
 
   def new

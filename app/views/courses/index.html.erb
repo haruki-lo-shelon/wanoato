@@ -2,6 +2,13 @@
 
 <div class="index">
 <h3>コース一覧</h3>
+
+<h4>投稿を検索</h4>
+ <%= form_tag({controller:"courses",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+
 <%= link_to "コース開拓へ", new_course_path %>
 <div class="courses-container">
   <% @courses.each do |t| %>
