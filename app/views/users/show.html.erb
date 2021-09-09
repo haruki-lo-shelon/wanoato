@@ -15,7 +15,7 @@
   <div class="has_courses">  
     <% @user.courses.each do |t| %>
       <%= t.user.name %>
-      <a href="/courses/<%= t.course.id %>"><%= t.course_name %></a>
+      <a href="<%= t.course.id %>"><%= t.course_name %></a>
     <% end %>
   </div>
   
