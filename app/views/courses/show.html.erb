@@ -4,7 +4,7 @@
   <h3>コース詳細</h3>
   <div class="course">
     <h4><%= @course.course_name %></h4>
-    <p><%= @course.course_name %></p>
+    <p><a href="/users/<%= @course.user.id %>"><%= t.user.name %></a></p>
     <p><%= @course.area %></p>
     <%= image_tag @course.image_url, size: "250x200" if @course.image? %>
     <p><%= @course.feature %></p>
