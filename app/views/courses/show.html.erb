@@ -19,9 +19,9 @@
              <i class="far fa-heart"></i><%= @course.likes.count %>
           <% end %>
       <% end %>
-  <% else %>
+    <% else %>
       <i class="far fa-heart"></i><%= @course.likes.count %>
-  <% end %>
+    <% end %>
   </div>
   
   <h4>いいねしたユーザー</h4>
@@ -30,25 +30,25 @@
   <% end %>
   
   <div class="comment-wrapper">
-  <p>コメント一覧</p>
-  <% @comments.each do |c| %>
-    <div>
-      <%= c.user.email unless c.user.blank? %>
-      <br>
-      <%= c.content %>
-    </div>
-      <br>
-  <% end %>
-
-  <% if user_signed_in? %>
-    <%= form_with(model: [@course, @comment], local: true) do |f| %>
-      <%= f.text_area :content %>
-      <%= button_tag type: "submit" do %>
-        <i class="far fa-comments"></i> コメントする
+    <p>コメント一覧</p>
+    <% @comments.each do |c| %>
+      <div>
+        <%= c.user.email unless c.user.blank? %>
+        <br>
+        <%= c.content %>
+      </div>
+        <br>
+    <% end %>
+  
+    <% if user_signed_in? %>
+      <%= form_with(model: [@course, @comment], local: true) do |f| %>
+        <%= f.text_area :content %>
+        <%= button_tag type: "submit" do %>
+          <i class="far fa-comments"></i> コメントする
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
   
   <%= link_to "コース一覧に戻る", courses_path %>
   <%= link_to "編集する", edit_course_path(@course.id) %>
