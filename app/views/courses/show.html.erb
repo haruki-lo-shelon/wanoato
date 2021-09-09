@@ -5,6 +5,7 @@
   <div class="course">
     <h4><%= @course.course_name %></h4>
     <p><%= @course.area %></p>
+    <%= image_tag @course.image_url, size: "250x200" if @course.image? %>
     <p><%= @course.feature %></p>
     <p><%= @course.created_at %></p>
     
