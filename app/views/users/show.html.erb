@@ -1,24 +1,26 @@
 <%= stylesheet_link_tag 'show_user', :media => "all" %>
 
-<h1><%= @user.name %>のページ</h1>
-<p>メールアドレス : <%= @user.email %></p>
-<p>マイバイク : <%= @user.bike %></p>
-<p>プロフィール : <%= @user.profile %></p>
-
-<% if current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
-<% end %>
-
-<h4>ユーザーの投稿一覧</h4>
-<% @user.courses.each do |t| %>
-  <%= t.user.name %>
-  <%= t.course_name %>
-<% end %>
-
-<h4>ユーザーがいいねした投稿一覧</h4>
-<% @user.liked_courses.each do |t| %>
-  <%= t.user.name %>
-  <%= t.course_name %>
-<% end %>
-
-<%= link_to "コース一覧に戻る", courses_path %>
+<div class="show_user">
+  <h1><%= @user.name %>のページ</h1>
+  <p>メールアドレス : <%= @user.email %></p>
+  <p>マイバイク : <%= @user.bike %></p>
+  <p>プロフィール : <%= @user.profile %></p>
+  
+  <% if current_user.id == @user.id %>
+    <%= link_to "編集する", edit_user_registration_path %>
+  <% end %>
+  
+  <h4>ユーザーの投稿一覧</h4>
+  <% @user.courses.each do |t| %>
+    <%= t.user.name %>
+    <%= t.course_name %>
+  <% end %>
+  
+  <h4>ユーザーがいいねした投稿一覧</h4>
+  <% @user.liked_courses.each do |t| %>
+    <%= t.user.name %>
+    <%= t.course_name %>
+  <% end %>
+  
+  <%= link_to "コース一覧に戻る", courses_path %>
+</div>
