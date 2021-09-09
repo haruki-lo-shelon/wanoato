@@ -14,8 +14,8 @@
   <h4>ユーザーの投稿一覧</h4>
   <div class="has_courses">  
     <% @user.courses.each do |t| %>
-      <%= t.user.name %>
       <a href="/courses/<%= t.id %>"><%= t.course_name %></a>
+      <br>
     <% end %>
   </div>
   
@@ -23,7 +23,8 @@
   <div class="liked_courses">
     <% @user.liked_courses.each do |t| %>
       <%= t.user.name %>
-      <%= t.course_name %>
+      <a href="/courses/<%= t.id %>"><%= t.course_name %></a>
+      <br>
     <% end %>
   </div>
   
