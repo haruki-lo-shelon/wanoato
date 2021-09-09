@@ -15,12 +15,10 @@
     <div class="wanoato">
       <%= t.user.email %>
       <div class="main-box">
-        
-        <%= image_tag t.image_url, size: "250x200" if t.image? %>
-        
         <div class="left-container">
           <%= t.course_name %>
           <%= t.area %>
+          <!--<%= image_tag t.image_url, size: "250x200" if t.image? %>-->
         </div>
         <div class="right-container">
           <% if user_signed_in? %>
