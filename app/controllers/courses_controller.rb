@@ -6,9 +6,9 @@ class CoursesController < ApplicationController
     if params[:search] != nil && params[:search] != ''
         #部分検索かつ複数検索
         search = params[:search]
-        @courses = Course.joins(:user).where("area LIKE ? OR course_name LIKE ?", "%#{search}%", "%#{search}%")
+        @courses = Course.joins(:user).where("area LIKE ? OR course_name LIKE ?", "%#{search}%", "%#{search}%").order(id: "DESC")
       else
-        @courses = Course.all
+        @courses = Course.all.order(id: "DESC")
       end
   end
 
