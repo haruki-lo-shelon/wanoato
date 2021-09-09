@@ -10,17 +10,22 @@
     <%= link_to "編集する", edit_user_registration_path %>
   <% end %>
   
+  
   <h4>ユーザーの投稿一覧</h4>
-  <% @user.courses.each do |t| %>
-    <%= t.user.name %>
-    <%= t.course_name %>
-  <% end %>
+  <div class="has_courses">  
+    <% @user.courses.each do |t| %>
+      <%= t.user.name %>
+      <%= t.course_name %>
+    <% end %>
+  </div>
   
   <h4>ユーザーがいいねした投稿一覧</h4>
-  <% @user.liked_courses.each do |t| %>
-    <%= t.user.name %>
-    <%= t.course_name %>
-  <% end %>
+  <div class="liked_courses">
+    <% @user.liked_courses.each do |t| %>
+      <%= t.user.name %>
+      <%= t.course_name %>
+    <% end %>
+  </div>
   
   <%= link_to "コース一覧に戻る", courses_path %>
 </div>
