@@ -1,5 +1,6 @@
-<h1>users#show</h1>
-<p>名前 : <%= @user.name %></p>
+<%= stylesheet_link_tag 'show_user', :media => "all" %>
+
+<h1><%= @user.name %>のページ</h1>
 <p>メールアドレス : <%= @user.email %></p>
 <p>マイバイク : <%= @user.bike %></p>
 <p>プロフィール : <%= @user.profile %></p>
@@ -8,13 +9,13 @@
   <%= link_to "編集する", edit_user_registration_path %>
 <% end %>
 
-<h2>ユーザーの投稿一覧</h2>
+<h4>ユーザーの投稿一覧</h4>
 <% @user.courses.each do |t| %>
   <%= t.user.name %>
   <%= t.course_name %>
 <% end %>
 
-<h2>ユーザーがいいねした投稿一覧</h2>
+<h4>ユーザーがいいねした投稿一覧</h4>
 <% @user.liked_courses.each do |t| %>
   <%= t.user.name %>
   <%= t.course_name %>
