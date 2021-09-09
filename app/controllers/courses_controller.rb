@@ -30,6 +30,9 @@ class CoursesController < ApplicationController
   
   def show
     @course = Course.find(params[:id])
+    
+    @comments = @course.comments
+    @comment = Comment.new
   end
 
   def edit
