@@ -37,6 +37,7 @@
             <i class="far fa-heart"></i><%= t.likes.count %>
           <% end %>
           <%= link_to "詳細", course_path(t.id) %>
+          <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
           <% if user_signed_in? && current_user.id == t.user_id %>
             <%= link_to "編集", edit_course_path(t.id) %>
             <%= link_to "削除", course_path(t.id), method: :delete %>
