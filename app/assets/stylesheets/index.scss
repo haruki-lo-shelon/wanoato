@@ -27,6 +27,11 @@ h3 {
   border-bottom: 3px solid blue;
   padding-left: 3px;
 }
+
+.user_and_picture {
+  flex-flow:column;
+}
+
 .main-box {
   margin: 5px 0;
   display: flex;

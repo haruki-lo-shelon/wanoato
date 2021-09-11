@@ -10,6 +10,7 @@
     <%= link_to "編集する", edit_user_registration_path %>
   <% end %>
   
+  <%= render ‘relationships/follow_button’, user: @user %>
   
   <h4>ユーザーの投稿一覧</h4>
   <div class="has_courses">  
