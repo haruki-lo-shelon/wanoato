@@ -30,8 +30,8 @@
   <h4>フォロー</h4>
   <div class="follows">
     <% @user.followings.each do |t| %>
-      <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
-      <!--<%= t.user.name %>-->
+      <a href="/users/<%= t.id %>"><%= t.name %></a>
+      <!--<%= t.name %>-->
     <% end %>
   </div>
   
