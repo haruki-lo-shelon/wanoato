@@ -13,7 +13,7 @@
   <%= render partial: 'relationships/follow_button', locals: {user: @user} %>
   
   <h4>ユーザーの投稿一覧</h4>
-  <div class="has_courses">  
+  <div class="has_courses">
     <% @user.courses.each do |t| %>
       <a href="/courses/<%= t.id %>"><%= t.course_name %><br></a>
     <% end %>
