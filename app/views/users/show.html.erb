@@ -31,7 +31,7 @@
   <div class="follows">
     <% @user.followings.each do |t| %>
       <a href="/users/<%= t.id %>"><%= t.name %></a>
-      <!--<%= t.name %>-->
+      <%= t.email %>
     <% end %>
   </div>
   
@@ -39,7 +39,7 @@
   <div class="followers">
     <% @user.followers.each do |t| %>
       <a href="/users/<%= t.id %>"><%= t.name %></a>
-      <!--<%= t.name %>-->
+      <%= t.email %>
     <% end %>
   </div>
   
