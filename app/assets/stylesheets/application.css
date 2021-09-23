@@ -30,7 +30,7 @@ header a {
   text-decoration: none; 
 }
 header h1 {
-  background-color: #466940;
+  background-color: #094200;
   margin-left: 20px;
   font-family: HGP行書体;
   color: white;
@@ -41,7 +41,7 @@ header h1 {
   align-items: center;
 }
 header ul {
-  background-color: #466940;
+  background-color: #094200;
   display: flex;
   color: white;
   text-shadow: 1px 2px 3px #808080;
@@ -51,7 +51,7 @@ header li {
   margin-right: 40px;
 }
 header a {
-  background-color: #466940;
+  background-color: #094200;
 }
 
 main {
