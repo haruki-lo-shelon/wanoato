@@ -13,7 +13,7 @@
 <div class="courses-container">
   <% @courses.each do |t| %>
     <div class="wanoato">
-        <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
+        <p><a href="/users/<%= t.user.id %>"><%= t.user.name %></a></p>
         <%= image_tag t.image_url, size: "250x200" if t.image? %>
       <div class="main-box">
         <div class="left-container">
