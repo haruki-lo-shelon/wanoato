@@ -13,11 +13,15 @@
 <div class="courses-container">
   <% @courses.each do |t| %>
     <div class="wanoato">
-        <p><a href="/users/<%= t.user.id %>"><%= t.user.name %></a></p>
-        <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <!--ユーザー名-->
+      <p><a href="/users/<%= t.user.id %>"><%= t.user.name %></a></p>
+      <!--写真-->
+      <%= image_tag t.image_url, size: "250x200" if t.image? %>
       <div class="main-box">
         <div class="left-container">
+          <!--コーズ名-->
           <div class="course_name"><%= t.course_name %></div>
+          <!--エリア-->
           ＜<%= t.area %>＞
         </div>
         <div class="right-container">
