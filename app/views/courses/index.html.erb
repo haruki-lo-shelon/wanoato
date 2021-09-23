@@ -16,7 +16,9 @@
       <!--ユーザー名-->
       <p><a href="/users/<%= t.user.id %>"><%= t.user.name %></a></p>
       <!--写真-->
-      <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      <div class="picture">
+        <%= image_tag t.image_url, size: "250x200" if t.image? %>
+      </div>
       <div class="main-box">
         <div class="left-container">
           <!--コーズ名-->
