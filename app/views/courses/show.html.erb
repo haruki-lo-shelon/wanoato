@@ -3,13 +3,13 @@
 <div class="show">
   <h3>コース詳細</h3>
   <div class="course">
-    <h4><%= @course.course_name %></h4>
-    <p><a href="/users/<%= @course.user.id %>"><%= @course.user.name %></a></p>
-    <p><%= @course.area %></p>
+    <h4><%= @course.course_name %></h4>&nbsp;＜<%= @course.area %>＞
+    <p>【開拓者】<a href="/users/<%= @course.user.id %>"><%= @course.user.name %></a></p>
     <%= image_tag @course.image_url, size: "250x200" if @course.image? %>
     <div class="feature">
       <p><%= @course.feature %></p>
     </div>
+    <br>
     <p><%= @course.created_at %></p>
     
     <% if user_signed_in? %>
@@ -27,11 +27,13 @@
     <% end %>
   </div>
   
+  <br>
   <h4>いいねしたユーザー</h4>
   <% @course.liked_users.each do |user| %>
     <li><%= user.email %></li>
   <% end %>
   
+  <br>
   <div class="comment-wrapper">
     <p>コメント一覧</p>
     <% @comments.each do |c| %>
@@ -51,6 +53,7 @@
     <% end %>
   </div>
   
-  <%= link_to "コース一覧に戻る", courses_path %>
+  <br>
+  <%= link_to "コース一覧に戻る", courses_path %>&nbsp;
   <%= link_to "編集する", edit_course_path(@course.id) %>
 </div>
