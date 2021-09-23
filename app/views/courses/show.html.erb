@@ -34,9 +34,7 @@
     <p>コメント一覧</p>
     <% @comments.each do |c| %>
       <div>
-        <%= c.user.name unless c.user.blank? %>
-        <br>
-        <%= c.content %>
+        ＜<%= c.user.name unless c.user.blank? %>＞&nbsp;<%= c.content %>
       </div>
         <br>
     <% end %>
