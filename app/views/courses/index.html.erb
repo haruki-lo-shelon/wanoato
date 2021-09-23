@@ -17,8 +17,8 @@
         <%= image_tag t.image_url, size: "250x200" if t.image? %>
       <div class="main-box">
         <div class="left-container">
-          <%= t.course_name %>
-          <%= t.area %>
+          <div class="course_name"><%= t.course_name %></div>
+          ＜<%= t.area %>＞
         </div>
         <div class="right-container">
           <% if user_signed_in? %>
