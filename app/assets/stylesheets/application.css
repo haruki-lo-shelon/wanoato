@@ -18,10 +18,12 @@ header {
   left: 0;
   background-color: #466940;
   height: 80px;
+  width: 100%;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 2px 2px 4px gray;
 }
 header a {
   color: white; 
@@ -41,6 +43,7 @@ header ul {
   background-color: #466940;
   display: flex;
   color: white;
+  text-shadow: 1px 2px 3px #808080;
 }
 header li {
   list-style: none;
@@ -49,10 +52,15 @@ header li {
 header a {
   background-color: #466940;
 }
+
+main {
+  margin-top: 80px;
+}
+
 footer {
   color: white;
   height: 30px;
-  background-color: #000;
+  background-color: #242424;
   bottom: 0;
   width: 100%;
   display: flex;
