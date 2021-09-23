@@ -13,6 +13,9 @@ body {
   min-height: 100vh;
 }
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #466940;
   height: 80px;
   font-weight: bold;
