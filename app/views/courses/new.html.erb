@@ -84,7 +84,10 @@
     <%= f.label :コース説明 %>
     <%= f.text_area :feature, :size => "30x2" %>
   </div>
-  <%= f.submit "コースを投稿する" %>
+  
+  <div class="post">
+    <%= f.submit "コースを投稿する" %>
+  </div>
 <% end %>
 
 <%= link_to "コース一覧に戻る", courses_path %>
