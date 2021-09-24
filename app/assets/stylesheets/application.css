@@ -41,12 +41,14 @@ header h1 {
   align-items: center;
 }
 header ul {
+  height: 80px;
   background-color: #094200;
   display: flex;
   color: white;
   text-shadow: 1px 2px 3px #808080;
 }
 header li {
+  height: 80px;
   list-style: none;
   margin-right: 40px;
 }
