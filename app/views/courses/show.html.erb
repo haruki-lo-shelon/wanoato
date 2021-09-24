@@ -5,7 +5,12 @@
   <div class="course">
     <h4><%= @course.course_name %></h4>&nbsp;＜<%= @course.area %>＞
     <p>【開拓者】<a href="/users/<%= @course.user.id %>"><%= @course.user.name %></a></p>
+    <!--写真-->
     <%= image_tag @course.image_url, size: "250x200" if @course.image? %>
+    <%= image_tag @course.image2_url, size: "250x200" if @course.image2? %>
+    <%= image_tag @course.image3_url, size: "250x200" if @course.image3? %>
+    <%= image_tag @course.image4_url, size: "250x200" if @course.image4? %>
+    <%= image_tag @course.image5_url, size: "250x200" if @course.image5? %>
     <div class="feature">
       <p><%= @course.feature %></p>
     </div>
