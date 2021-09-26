@@ -3,7 +3,7 @@
 <div class="show">
   <h3>コース詳細</h3>
   <div class="course">
-    <h4><%= @course.course_name %></h4>&nbsp;＜<%= @course.area %>＞
+    <h1><%= @course.course_name %></h1>&nbsp;＜<%= @course.area %>＞
     <p>【開拓者】<a href="/users/<%= @course.user.id %>"><%= @course.user.name %></a></p>
     <!--写真-->
     <%= image_tag @course.image_url, size: "250x200" if @course.image? %>
