@@ -2,6 +2,7 @@
 
 <div class="show_user">
   <h1><%= @user.name %>のページ</h1>
+  <%= image_tag t.image_url, size: "250x200" if t.image? %>
   <p>メールアドレス : <%= @user.email %></p>
   <p>マイバイク : <%= @user.bike %></p>
   <p>プロフィール : <%= @user.profile %></p>
