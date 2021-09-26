@@ -3,45 +3,48 @@
 <div class="show_user">
   <h1><%= @user.name %>のページ</h1>
   <%= image_tag @user.image_url, size: "250x200" if @user.image? %>
-  <p>メールアドレス : <%= @user.email %></p>
-  <p>マイバイク : <%= @user.bike %></p>
-  <p>プロフィール : <%= @user.profile %></p>
   
-  <% if current_user.id == @user.id %>
-    <%= link_to "編集する", edit_user_registration_path %>
-  <% end %>
-  
-  <%= render partial: 'relationships/follow_button', locals: {user: @user} %>
-  
-  <h4>ユーザーの投稿一覧</h4>
-  <div class="has_courses">
-    <% @user.courses.each do |t| %>
-      <a href="/courses/<%= t.id %>"><%= t.course_name %><br></a>
+  <div class="profile">
+    <p>メールアドレス : <%= @user.email %></p>
+    <p>マイバイク : <%= @user.bike %></p>
+    <p>プロフィール : <%= @user.profile %></p>
+    
+    <% if current_user.id == @user.id %>
+      <%= link_to "編集する", edit_user_registration_path %>
     <% end %>
-  </div>
-  
-  <h4>ユーザーがいいねした投稿一覧</h4>
-  <div class="liked_courses">
-    <% @user.liked_courses.each do |t| %>
-      <%= t.user.name %>
-      <a href="/courses/<%= t.id %>"><%= t.course_name %><br></a>
-    <% end %>
-  </div>
-  
-  <h4>フォロー</h4>
-  <div class="follows">
-    <% @user.followings.each do |t| %>
-      <a href="/users/<%= t.id %>"><%= t.name %></a>
-      <%= t.email %>
-    <% end %>
-  </div>
-  
-  <h4>フォロワー</h4>
-  <div class="followers">
-    <% @user.followers.each do |t| %>
-      <a href="/users/<%= t.id %>"><%= t.name %></a>
-      <%= t.email %>
-    <% end %>
+    
+    <%= render partial: 'relationships/follow_button', locals: {user: @user} %>
+    
+    <h4>ユーザーの投稿一覧</h4>
+    <div class="has_courses">
+      <% @user.courses.each do |t| %>
+        <a href="/courses/<%= t.id %>"><%= t.course_name %><br></a>
+      <% end %>
+    </div>
+    
+    <h4>ユーザーがいいねした投稿一覧</h4>
+    <div class="liked_courses">
+      <% @user.liked_courses.each do |t| %>
+        <%= t.user.name %>
+        <a href="/courses/<%= t.id %>"><%= t.course_name %><br></a>
+      <% end %>
+    </div>
+    
+    <h4>フォロー</h4>
+    <div class="follows">
+      <% @user.followings.each do |t| %>
+        <a href="/users/<%= t.id %>"><%= t.name %></a>
+        <%= t.email %>
+      <% end %>
+    </div>
+    
+    <h4>フォロワー</h4>
+    <div class="followers">
+      <% @user.followers.each do |t| %>
+        <a href="/users/<%= t.id %>"><%= t.name %></a>
+        <%= t.email %>
+      <% end %>
+    </div>
   </div>
   
   <div class="back">
