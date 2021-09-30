@@ -53,6 +53,10 @@ class CoursesController < ApplicationController
     course.destroy
     redirect_to action: :index
   end
+  
+  def post_params
+      params.require(:post).permit(:body,:lat,:lng)
+  end
 
   private
   def course_params
