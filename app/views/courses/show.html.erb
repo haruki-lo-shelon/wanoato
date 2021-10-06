@@ -128,41 +128,22 @@
 
 <!-- js部分 -->
 <script>
-    function initMap() {
+//初期マップの設定
+let map
+let marker
+function initMap(){
+  geocoder = new google.maps.Geocoder()
 
-      //初期表示位置
-      let latlng = new google.maps.LatLng(38.60, 139.5);
-      //デザイン
-      let styles = [
-           {
-            stylers: [
-             { "saturation": 0 },
-             { "lightness": 0 }
-            ]
-           }
-          ];
+  map = new google.maps.Map(document.getElementById('map'), {
+    center:  {lat: <%= @course.lat %>, lng: <%= @course.lng %>},
+    zoom: 15,
+  });
 
-      let map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 5.5,
-          styles: styles,
-          center: latlng
-      });
-      let transitLayer = new google.maps.TransitLayer();
-      transitLayer.setMap(map);
-
-      
-        ( function() { 
-          let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat %>, lng: <%= @course.lng %>}); // 緯度経度のデータ作成
-          let marker = new google.maps.Marker({ 
-            position: markerLatLng, 
-            map: map 
-          });
-    　　
-
-       })();
-      
-      //複数マーカー ここまで  
-  }
+   marker = new google.maps.Marker({
+    position:  {lat: <%= @course.lat %>, lng: <%= @course.lng %>},
+    map: map
+  });
+}
 </script>
   
   
