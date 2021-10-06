@@ -164,6 +164,19 @@
     });   
   }
   
+  
+  ( function() { 
+          let markerLatLng = new google.maps.LatLng({lat: <%= f.lat %>, lng: <%= f.lng %>}); // 緯度経度のデータ作成
+          let marker = new google.maps.Marker({ 
+            position: markerLatLng, 
+            map: map 
+          });
+    　　
+         
+
+       })();
+  
+  
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56I1wI-fEG9_sBEeQ4EiErJYdKXvFQS4&callback=initMap" async defer></script>
   
