@@ -137,22 +137,22 @@
   <input id="address" type="textbox">
   <input type="button" value="検索" onclick="codeAddress()">
   </br>
-  <h4>チェックポイント２</h4>
-  <input id="address" type="textbox">
-  <input type="button" value="検索" onclick="codeAddress2()">
-  </br>
-  <h4>チェックポイント３</h4>
-  <input id="address" type="textbox">
-  <input type="button" value="検索" onclick="codeAddress3()">
-  </br>
-  <h4>チェックポイント４</h4>
-  <input id="address" type="textbox">
-  <input type="button" value="検索" onclick="codeAddress4()">
-  </br>
-  <h4>チェックポイント５</h4>
-  <input id="address" type="textbox">
-  <input type="button" value="検索" onclick="codeAddress5()">
-  </br>
+  <!--<h4>チェックポイント２</h4>-->
+  <!--<input id="address" type="textbox">-->
+  <!--<input type="button" value="検索" onclick="codeAddress2()">-->
+  <!--</br>-->
+  <!--<h4>チェックポイント３</h4>-->
+  <!--<input id="address" type="textbox">-->
+  <!--<input type="button" value="検索" onclick="codeAddress3()">-->
+  <!--</br>-->
+  <!--<h4>チェックポイント４</h4>-->
+  <!--<input id="address" type="textbox">-->
+  <!--<input type="button" value="検索" onclick="codeAddress4()">-->
+  <!--</br>-->
+  <!--<h4>チェックポイント５</h4>-->
+  <!--<input id="address" type="textbox">-->
+  <!--<input type="button" value="検索" onclick="codeAddress5()">-->
+  <!--</br>-->
   
   <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
   <div id='map'></div>
@@ -192,10 +192,10 @@
           }
   
           //新しくマーカーを作成する
-          map.setCenter(results[0].geometry.location);
+          map.setCenter(results[1].geometry.location);
               marker = new google.maps.Marker({
               map: map,
-              position: results[0].geometry.location,
+              position: results[1].geometry.location,
               draggable: true // ドラッグ可能にする
           });
   
