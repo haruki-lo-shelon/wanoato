@@ -224,12 +224,12 @@
       if (status == 'OK') {
           //マーカーが複数できないようにする
           if (aft2 == true){
-              marker2.setMap(null);
+              marker.setMap(null);
           }
   
           //新しくマーカーを作成する
           map.setCenter(results[0].geometry.location);
-              marker2 = new google.maps.Marker({
+              marker = new google.maps.Marker({
               map: map,
               position: results[0].geometry.location,
               draggable: true // ドラッグ可能にする
@@ -239,14 +239,14 @@
           aft2 = true
   
           //検索した時に緯度経度を入力する
-          document.getElementById('lat2').value = results[0].geometry.location.lat2();
-          document.getElementById('lng2').value = results[0].geometry.location.lng2();
+          document.getElementById('lat2').value = results[0].geometry.location.lat();
+          document.getElementById('lng2').value = results[0].geometry.location.lng();
   
           // マーカーのドロップ（ドラッグ終了）時のイベント
           google.maps.event.addListener( marker2, 'dragend', function(ev){
               // イベントの引数evの、プロパティ.latLngが緯度経度
-              document.getElementById('lat2').value = ev.latLng.lat2();
-              document.getElementById('lng2').value = ev.latLng.lng2();
+              document.getElementById('lat2').value = ev.latLng.lat();
+              document.getElementById('lng2').value = ev.latLng.lng();
           });
       } else {
         alert('該当する結果がありませんでした：' + status);
