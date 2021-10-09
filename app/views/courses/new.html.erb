@@ -90,17 +90,70 @@
   
 
   <div class="actions">
+    <h4>チェックポイント１</h4>
     <%= f.label :lat,"緯度" %>
     <%= f.text_field :lat,:value =>"緯度", id: :lat %>
     </br>
     <%= f.label :lng,"経度" %>
     <%= f.text_field :lng,:value =>"経度", id: :lng %>
+    </br>
+    
+    <h4>チェックポイント２</h4>
+    <%= f.label :lat2,"緯度" %>
+    <%= f.text_field :lat2,:value =>"緯度", id: :lat2 %>
+    </br>
+    <%= f.label :lng2,"経度" %>
+    <%= f.text_field :lng2,:value =>"経度", id: :lng2 %>
+    </br>
+    
+    <h4>チェックポイント３</h4>
+    <%= f.label :lat3,"緯度" %>
+    <%= f.text_field :lat3,:value =>"緯度", id: :lat3 %>
+    </br>
+    <%= f.label :lng3,"経度" %>
+    <%= f.text_field :lng3,:value =>"経度", id: :lng3 %>
+    </br>
+    
+    <h4>チェックポイント４</h4>
+    <%= f.label :lat4,"緯度" %>
+    <%= f.text_field :lat4,:value =>"緯度", id: :lat4 %>
+    </br>
+    <%= f.label :lng4,"経度" %>
+    <%= f.text_field :lng4,:value =>"経度", id: :lng4 %>
+    </br>
+    
+    <h4>チェックポイント５</h4>
+    <%= f.label :lat5,"緯度" %>
+    <%= f.text_field :lat5,:value =>"緯度", id: :lat5 %>
+    </br>
+    <%= f.label :lng5,"経度" %>
+    <%= f.text_field :lng5,:value =>"経度", id: :lng5 %>
+    </br>
   </div>
   
   <h2>Map</h2>
   
-  <input id="address" type="textbox" value="GeekSalon">
+  <h4>チェックポイント１</h4>
+  <input id="address" type="textbox">
   <input type="button" value="検索" onclick="codeAddress()">
+  </br>
+  <h4>チェックポイント２</h4>
+  <input id="address2" type="textbox">
+  <input type="button" value="検索" onclick="codeAddress2()">
+  </br>
+  <h4>チェックポイント３</h4>
+  <input id="address3" type="textbox">
+  <input type="button" value="検索" onclick="codeAddress3()">
+  </br>
+  <h4>チェックポイント４</h4>
+  <input id="address4" type="textbox">
+  <input type="button" value="検索" onclick="codeAddress4()">
+  </br>
+  <h4>チェックポイント５</h4>
+  <input id="address5" type="textbox">
+  <input type="button" value="検索" onclick="codeAddress5()">
+  </br>
+  
   <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
   <div id='map'></div>
   
@@ -114,7 +167,7 @@
   <script>
   //初期マップの設定
   let map
-  let marker
+  let marker, marker2, marker3, marker4, marker5
   function initMap(){
     geocoder = new google.maps.Geocoder()
   
@@ -126,8 +179,8 @@
   }
   
   //検索後のマップ作成
-  let geocoder
-  let aft
+  let geocoder, geocoder2, geocoder3, geocoder4, geocoder5
+  let aft, aft2, aft3, aft4, aft5
   function codeAddress(){
     let inputAddress = document.getElementById('address').value;
     geocoder.geocode( { 'address': inputAddress}, function(results, status) {
@@ -163,6 +216,155 @@
       }
     });   
   }
+  
+  
+  function codeAddress2(){
+    let inputAddress2 = document.getElementById('address2').value;
+    geocoder.geocode( { 'address2': inputAddress2}, function(results, status) {
+      if (status == 'OK') {
+          //マーカーが複数できないようにする
+          if (aft2 == true){
+              marker2.setMap(null);
+          }
+  
+          //新しくマーカーを作成する
+          map.setCenter(results[0].geometry.location);
+              marker2 = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location,
+              draggable: true // ドラッグ可能にする
+          });
+  
+          //二度目以降か判断
+          aft = true
+  
+          //検索した時に緯度経度を入力する
+          document.getElementById('lat2').value = results[0].geometry.location.lat2();
+          document.getElementById('lng2').value = results[0].geometry.location.lng2();
+  
+          // マーカーのドロップ（ドラッグ終了）時のイベント
+          google.maps.event.addListener( marker2, 'dragend', function(ev){
+              // イベントの引数evの、プロパティ.latLngが緯度経度
+              document.getElementById('lat2').value = ev.latLng.lat2();
+              document.getElementById('lng2').value = ev.latLng.lng2();
+          });
+      } else {
+        alert('該当する結果がありませんでした：' + status);
+      }
+    });   
+  }
+  
+  
+  function codeAddress3(){
+    let inputAddress3 = document.getElementById('address3').value;
+    geocoder.geocode( { 'address3': inputAddress3}, function(results, status) {
+      if (status == 'OK') {
+          //マーカーが複数できないようにする
+          if (aft3 == true){
+              marker3.setMap(null);
+          }
+  
+          //新しくマーカーを作成する
+          map.setCenter(results[0].geometry.location);
+              marker3 = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location,
+              draggable: true // ドラッグ可能にする
+          });
+  
+          //二度目以降か判断
+          aft3 = true
+  
+          //検索した時に緯度経度を入力する
+          document.getElementById('lat3').value = results[0].geometry.location.lat3();
+          document.getElementById('lng3').value = results[0].geometry.location.lng3();
+  
+          // マーカーのドロップ（ドラッグ終了）時のイベント
+          google.maps.event.addListener( marker3, 'dragend', function(ev){
+              // イベントの引数evの、プロパティ.latLngが緯度経度
+              document.getElementById('lat3').value = ev.latLng.lat3();
+              document.getElementById('lng3').value = ev.latLng.lng3();
+          });
+      } else {
+        alert('該当する結果がありませんでした：' + status);
+      }
+    });   
+  }
+  
+  
+  function codeAddress4(){
+    let inputAddress4 = document.getElementById('address4').value;
+    geocoder.geocode( { 'address4': inputAddress4}, function(results, status) {
+      if (status == 'OK') {
+          //マーカーが複数できないようにする
+          if (aft4 == true){
+              marker4.setMap(null);
+          }
+  
+          //新しくマーカーを作成する
+          map.setCenter(results[0].geometry.location);
+              marker4 = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location,
+              draggable: true // ドラッグ可能にする
+          });
+  
+          //二度目以降か判断
+          aft4 = true
+  
+          //検索した時に緯度経度を入力する
+          document.getElementById('lat4').value = results[0].geometry.location.lat4();
+          document.getElementById('lng4').value = results[0].geometry.location.lng4();
+  
+          // マーカーのドロップ（ドラッグ終了）時のイベント
+          google.maps.event.addListener( marker4, 'dragend', function(ev){
+              // イベントの引数evの、プロパティ.latLngが緯度経度
+              document.getElementById('lat4').value = ev.latLng.lat4();
+              document.getElementById('lng4').value = ev.latLng.lng4();
+          });
+      } else {
+        alert('該当する結果がありませんでした：' + status);
+      }
+    });   
+  }
+  
+  
+  function codeAddress5(){
+    let inputAddress5 = document.getElementById('address5').value;
+    geocoder.geocode( { 'address5': inputAddress5}, function(results, status) {
+      if (status == 'OK') {
+          //マーカーが複数できないようにする
+          if (aft5 == true){
+              marker5.setMap(null);
+          }
+  
+          //新しくマーカーを作成する
+          map.setCenter(results[0].geometry.location);
+              marker5 = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location,
+              draggable: true // ドラッグ可能にする
+          });
+  
+          //二度目以降か判断
+          aft5 = true
+  
+          //検索した時に緯度経度を入力する
+          document.getElementById('lat5').value = results[0].geometry.location.lat5();
+          document.getElementById('lng5').value = results[0].geometry.location.lng5();
+  
+          // マーカーのドロップ（ドラッグ終了）時のイベント
+          google.maps.event.addListener( marker5, 'dragend', function(ev){
+              // イベントの引数evの、プロパティ.latLngが緯度経度
+              document.getElementById('lat5').value = ev.latLng.lat5();
+              document.getElementById('lng5').value = ev.latLng.lng5();
+          });
+      } else {
+        alert('該当する結果がありませんでした：' + status);
+      }
+    });   
+  }
+  
   
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56I1wI-fEG9_sBEeQ4EiErJYdKXvFQS4&callback=initMap" async defer></script>

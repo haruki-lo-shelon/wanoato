@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2021_09_30_113036) do
     t.string "image5"
     t.float "lat"
     t.float "lng"
+    t.float "lat2"
+    t.float "lng2"
+    t.float "lat3"
+    t.float "lng3"
+    t.float "lat4"
+    t.float "lng4"
+    t.float "lat5"
+    t.float "lng5"
   end
 
   create_table "likes", force: :cascade do |t|
