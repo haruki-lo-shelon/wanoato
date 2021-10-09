@@ -137,22 +137,7 @@
   <input id="address" type="textbox">
   <input type="button" value="検索" onclick="codeAddress()">
   </br>
-  <h4>チェックポイント２</h4>
-  <input id="address" type="textbox">
-  <!--<input type="button" value="検索" onclick="codeAddress2()">-->
-  </br>
-  <h4>チェックポイント３</h4>
-  <input id="address" type="textbox">
-  <!--<input type="button" value="検索" onclick="codeAddress3()">-->
-  </br>
-  <h4>チェックポイント４</h4>
-  <input id="address" type="textbox">
-  <!--<input type="button" value="検索" onclick="codeAddress4()">-->
-  </br>
-  <h4>チェックポイント５</h4>
-  <input id="address" type="textbox">
-  <!--<input type="button" value="検索" onclick="codeAddress5()">-->
-  </br>
+  
   
   <p>マーカーをドラック＆ドロップで位置の調整ができます。<p>
   <div id='map'></div>
@@ -167,7 +152,7 @@
   <script>
   //初期マップの設定
   let map
-  let marker, marker2, marker3, marker4, marker5
+  let marker
   function initMap(){
     geocoder = new google.maps.Geocoder()
     geocoder2 = new google.maps.Geocoder()
@@ -192,10 +177,10 @@
           }
   
           //新しくマーカーを作成する
-          map.setCenter(results[1].geometry.location);
+          map.setCenter(results[0].geometry.location);
               marker = new google.maps.Marker({
               map: map,
-              position: results[1].geometry.location,
+              position: results[0].geometry.location,
               draggable: true // ドラッグ可能にする
           });
   
@@ -211,155 +196,6 @@
               // イベントの引数evの、プロパティ.latLngが緯度経度
               document.getElementById('lat').value = ev.latLng.lat();
               document.getElementById('lng').value = ev.latLng.lng();
-          });
-      } else {
-        alert('該当する結果がありませんでした：' + status);
-      }
-    });   
-  }
-  
-  var geocoder2
-  var aft2
-  function codeAddress2(){
-    var inputAddress = document.getElementById('address').value;
-    geocoder2.geocode( { 'address': inputAddress}, function(results, status) {
-      if (status == 'OK') {
-          //マーカーが複数できないようにする
-          if (aft2 == true){
-              marker.setMap(null);
-          }
-  
-          //新しくマーカーを作成する
-          map.setCenter(results[1].geometry.location);
-              marker = new google.maps.Marker({
-              map: map,
-              position: results[1].geometry.location,
-              draggable: true // ドラッグ可能にする
-          });
-  
-          //二度目以降か判断
-          aft2 = true
-  
-          //検索した時に緯度経度を入力する
-          document.getElementById('lat2').value = results[1].geometry.location.lat();
-          document.getElementById('lng2').value = results[1].geometry.location.lng();
-  
-          // マーカーのドロップ（ドラッグ終了）時のイベント
-          google.maps.event.addListener( marker2, 'dragend', function(ev){
-              // イベントの引数evの、プロパティ.latLngが緯度経度
-              document.getElementById('lat').value = ev.latLng.lat();
-              document.getElementById('lng').value = ev.latLng.lng();
-          });
-      } else {
-        alert('該当する結果がありませんでした：' + status);
-      }
-    });   
-  }
-  
-  
-  function codeAddress3(){
-    var inputAddress3 = document.getElementById('address3').value;
-    geocoder.geocode( { 'address3': inputAddress3}, function(results, status) {
-      if (status == 'OK') {
-          //マーカーが複数できないようにする
-          if (aft3 == true){
-              marker3.setMap(null);
-          }
-  
-          //新しくマーカーを作成する
-          map.setCenter(results[0].geometry.location);
-              marker3 = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location,
-              draggable: true // ドラッグ可能にする
-          });
-  
-          //二度目以降か判断
-          aft3 = true
-  
-          //検索した時に緯度経度を入力する
-          document.getElementById('lat3').value = results[0].geometry.location.lat3();
-          document.getElementById('lng3').value = results[0].geometry.location.lng3();
-  
-          // マーカーのドロップ（ドラッグ終了）時のイベント
-          google.maps.event.addListener( marker3, 'dragend', function(ev){
-              // イベントの引数evの、プロパティ.latLngが緯度経度
-              document.getElementById('lat3').value = ev.latLng.lat3();
-              document.getElementById('lng3').value = ev.latLng.lng3();
-          });
-      } else {
-        alert('該当する結果がありませんでした：' + status);
-      }
-    });   
-  }
-  
-  
-  function codeAddress4(){
-    var inputAddress4 = document.getElementById('address4').value;
-    geocoder.geocode( { 'address4': inputAddress4}, function(results, status) {
-      if (status == 'OK') {
-          //マーカーが複数できないようにする
-          if (aft4 == true){
-              marker4.setMap(null);
-          }
-  
-          //新しくマーカーを作成する
-          map.setCenter(results[0].geometry.location);
-              marker4 = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location,
-              draggable: true // ドラッグ可能にする
-          });
-  
-          //二度目以降か判断
-          aft4 = true
-  
-          //検索した時に緯度経度を入力する
-          document.getElementById('lat4').value = results[0].geometry.location.lat4();
-          document.getElementById('lng4').value = results[0].geometry.location.lng4();
-  
-          // マーカーのドロップ（ドラッグ終了）時のイベント
-          google.maps.event.addListener( marker4, 'dragend', function(ev){
-              // イベントの引数evの、プロパティ.latLngが緯度経度
-              document.getElementById('lat4').value = ev.latLng.lat4();
-              document.getElementById('lng4').value = ev.latLng.lng4();
-          });
-      } else {
-        alert('該当する結果がありませんでした：' + status);
-      }
-    });   
-  }
-  
-  
-  function codeAddress5(){
-    var inputAddress5 = document.getElementById('address5').value;
-    geocoder.geocode( { 'address5': inputAddress5}, function(results, status) {
-      if (status == 'OK') {
-          //マーカーが複数できないようにする
-          if (aft5 == true){
-              marker5.setMap(null);
-          }
-  
-          //新しくマーカーを作成する
-          map.setCenter(results[0].geometry.location);
-              marker5 = new google.maps.Marker({
-              map: map,
-              position: results[0].geometry.location,
-              draggable: true // ドラッグ可能にする
-          });
-  
-          //二度目以降か判断
-          aft5 = true
-  
-          //検索した時に緯度経度を入力する
-          document.getElementById('lat5').value = results[0].geometry.location.lat5();
-          document.getElementById('lng5').value = results[0].geometry.location.lng5();
-  
-          // マーカーのドロップ（ドラッグ終了）時のイベント
-          google.maps.event.addListener( marker5, 'dragend', function(ev){
-              // イベントの引数evの、プロパティ.latLngが緯度経度
-              document.getElementById('lat5').value = ev.latLng.lat5();
-              document.getElementById('lng5').value = ev.latLng.lng5();
           });
       } else {
         alert('該当する結果がありませんでした：' + status);
