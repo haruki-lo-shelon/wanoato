@@ -55,7 +55,7 @@ class CoursesController < ApplicationController
   end
   
   def post_params
-      params.require(:post).permit(:body,:lat,:lng)
+      params.require(:post).permit(:lat, :lng, :lat2, :lng2, :lat3, :lng3, :lat4, :lng4, :lat5, :lng5)
   end
 
   private
