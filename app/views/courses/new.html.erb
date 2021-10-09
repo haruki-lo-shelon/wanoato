@@ -170,6 +170,7 @@
   let marker, marker2, marker3, marker4, marker5
   function initMap(){
     geocoder = new google.maps.Geocoder()
+    geocoder2 = new google.maps.Geocoder()
   
     map = new google.maps.Map(document.getElementById('map'), {
       center:  {lat: 35.6803997, lng:139.7690174},  //東京
@@ -179,8 +180,8 @@
   }
   
   //検索後のマップ作成
-  let geocoder
-  let aft, aft2, aft3, aft4, aft5
+  var geocoder
+  var aft
   function codeAddress(){
     let inputAddress = document.getElementById('address').value;
     geocoder.geocode( { 'address': inputAddress}, function(results, status) {
@@ -217,10 +218,11 @@
     });   
   }
   
-  
+  var geocoder2
+  var aft2
   function codeAddress2(){
     let inputAddress = document.getElementById('address').value;
-    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+    geocoder2.geocode( { 'address': inputAddress}, function(results, status) {
       if (status == 'OK') {
           //マーカーが複数できないようにする
           if (aft2 == true){
