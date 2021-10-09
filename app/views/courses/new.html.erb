@@ -220,7 +220,7 @@
   
   function codeAddress2(){
     let inputAddress = document.getElementById('address').value;
-    geocoder.geocode( { 'address': inputAddress2}, function(results, status) {
+    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
       if (status == 'OK') {
           //マーカーが複数できないようにする
           if (aft2 == true){
