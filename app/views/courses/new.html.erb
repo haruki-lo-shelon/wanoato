@@ -138,19 +138,19 @@
   <input type="button" value="検索" onclick="codeAddress()">
   </br>
   <h4>チェックポイント２</h4>
-  <input id="address2" type="textbox">
+  <input id="address" type="textbox">
   <input type="button" value="検索" onclick="codeAddress2()">
   </br>
   <h4>チェックポイント３</h4>
-  <input id="address3" type="textbox">
+  <input id="address" type="textbox">
   <input type="button" value="検索" onclick="codeAddress3()">
   </br>
   <h4>チェックポイント４</h4>
-  <input id="address4" type="textbox">
+  <input id="address" type="textbox">
   <input type="button" value="検索" onclick="codeAddress4()">
   </br>
   <h4>チェックポイント５</h4>
-  <input id="address5" type="textbox">
+  <input id="address" type="textbox">
   <input type="button" value="検索" onclick="codeAddress5()">
   </br>
   
@@ -179,7 +179,7 @@
   }
   
   //検索後のマップ作成
-  let geocoder, geocoder2, geocoder3, geocoder4, geocoder5
+  let geocoder
   let aft, aft2, aft3, aft4, aft5
   function codeAddress(){
     let inputAddress = document.getElementById('address').value;
@@ -219,8 +219,8 @@
   
   
   function codeAddress2(){
-    let inputAddress2 = document.getElementById('address2').value;
-    geocoder.geocode( { 'address2': inputAddress2}, function(results, status) {
+    let inputAddress = document.getElementById('address').value;
+    geocoder.geocode( { 'address': inputAddress2}, function(results, status) {
       if (status == 'OK') {
           //マーカーが複数できないようにする
           if (aft2 == true){
@@ -236,7 +236,7 @@
           });
   
           //二度目以降か判断
-          aft = true
+          aft2 = true
   
           //検索した時に緯度経度を入力する
           document.getElementById('lat2').value = results[0].geometry.location.lat2();
