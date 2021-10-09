@@ -230,10 +230,10 @@
           }
   
           //新しくマーカーを作成する
-          map.setCenter(results[0].geometry.location);
+          map.setCenter(results[1].geometry.location);
               marker = new google.maps.Marker({
               map: map,
-              position: results[0].geometry.location,
+              position: results[1].geometry.location,
               draggable: true // ドラッグ可能にする
           });
   
@@ -241,8 +241,8 @@
           aft2 = true
   
           //検索した時に緯度経度を入力する
-          document.getElementById('lat').value = results[0].geometry.location.lat();
-          document.getElementById('lng').value = results[0].geometry.location.lng();
+          document.getElementById('lat2').value = results[1].geometry.location.lat();
+          document.getElementById('lng2').value = results[1].geometry.location.lng();
   
           // マーカーのドロップ（ドラッグ終了）時のイベント
           google.maps.event.addListener( marker2, 'dragend', function(ev){
