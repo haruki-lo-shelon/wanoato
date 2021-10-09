@@ -241,14 +241,14 @@
           aft2 = true
   
           //検索した時に緯度経度を入力する
-          document.getElementById('lat2').value = results[0].geometry.location.lat();
-          document.getElementById('lng2').value = results[0].geometry.location.lng();
+          document.getElementById('lat').value = results[0].geometry.location.lat();
+          document.getElementById('lng').value = results[0].geometry.location.lng();
   
           // マーカーのドロップ（ドラッグ終了）時のイベント
           google.maps.event.addListener( marker2, 'dragend', function(ev){
               // イベントの引数evの、プロパティ.latLngが緯度経度
-              document.getElementById('lat2').value = ev.latLng.lat();
-              document.getElementById('lng2').value = ev.latLng.lng();
+              document.getElementById('lat').value = ev.latLng.lat();
+              document.getElementById('lng').value = ev.latLng.lng();
           });
       } else {
         alert('該当する結果がありませんでした：' + status);
