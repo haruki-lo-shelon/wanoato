@@ -183,7 +183,7 @@
   var geocoder
   var aft
   function codeAddress(){
-    let inputAddress = document.getElementById('address').value;
+    var inputAddress = document.getElementById('address').value;
     geocoder.geocode( { 'address': inputAddress}, function(results, status) {
       if (status == 'OK') {
           //マーカーが複数できないようにする
@@ -221,7 +221,7 @@
   var geocoder2
   var aft2
   function codeAddress2(){
-    let inputAddress = document.getElementById('address').value;
+    var inputAddress = document.getElementById('address').value;
     geocoder2.geocode( { 'address': inputAddress}, function(results, status) {
       if (status == 'OK') {
           //マーカーが複数できないようにする
@@ -258,7 +258,7 @@
   
   
   function codeAddress3(){
-    let inputAddress3 = document.getElementById('address3').value;
+    var inputAddress3 = document.getElementById('address3').value;
     geocoder.geocode( { 'address3': inputAddress3}, function(results, status) {
       if (status == 'OK') {
           //マーカーが複数できないようにする
@@ -295,7 +295,7 @@
   
   
   function codeAddress4(){
-    let inputAddress4 = document.getElementById('address4').value;
+    var inputAddress4 = document.getElementById('address4').value;
     geocoder.geocode( { 'address4': inputAddress4}, function(results, status) {
       if (status == 'OK') {
           //マーカーが複数できないようにする
@@ -332,7 +332,7 @@
   
   
   function codeAddress5(){
-    let inputAddress5 = document.getElementById('address5').value;
+    var inputAddress5 = document.getElementById('address5').value;
     geocoder.geocode( { 'address5': inputAddress5}, function(results, status) {
       if (status == 'OK') {
           //マーカーが複数できないようにする
