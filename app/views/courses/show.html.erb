@@ -16,6 +16,64 @@
       <p><%= @course.feature %></p>
     </div>
     <br>
+    
+    
+  <!--<input id="address" type="textbox" value="GeekSalon">-->
+  <!--<input type="button" value="Encode" onclick="codeAddress()">-->
+  
+<div id='map'></div>
+  
+<style>
+#map {
+  height: 600px;
+  width: 50%;
+}
+</style>
+
+<!-- js部分 -->
+<script>
+//初期マップの設定
+let map
+let marker
+function initMap(){
+  geocoder = new google.maps.Geocoder()
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center:  {lat: <%= @course.lat %>, lng: <%= @course.lng %>},
+    zoom: 15,
+  });
+
+   marker = new google.maps.Marker({
+    position:  {lat: <%= @course.lat %>, lng: <%= @course.lng %>},
+    map: map
+  });
+  
+  marker = new google.maps.Marker({
+    position:  {lat: <%= @course.lat2 %>, lng: <%= @course.lng2 %>},
+    map: map
+  });
+  
+  marker = new google.maps.Marker({
+    position:  {lat: <%= @course.lat3 %>, lng: <%= @course.lng3 %>},
+    map: map
+  });
+  
+  marker = new google.maps.Marker({
+    position:  {lat: <%= @course.lat4 %>, lng: <%= @course.lng4 %>},
+    map: map
+  });
+  
+  marker = new google.maps.Marker({
+    position:  {lat: <%= @course.lat5 %>, lng: <%= @course.lng5 %>},
+    map: map
+  });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56I1wI-fEG9_sBEeQ4EiErJYdKXvFQS4&callback=initMap" async defer></script>
+  
+    
+    
     <p><%= @course.created_at %></p>
     
     <% if user_signed_in? %>
@@ -62,40 +120,6 @@
   
   
   
-  <!--<input id="address" type="textbox" value="GeekSalon">-->
-  <!--<input type="button" value="Encode" onclick="codeAddress()">-->
-  
-  <div id='map'></div>
-  
-<style>
-#map {
-  height: 600px;
-  width: 50%;
-}
-</style>
-
-<!-- js部分 -->
-<script>
-//初期マップの設定
-let map
-let marker
-function initMap(){
-  geocoder = new google.maps.Geocoder()
-
-  map = new google.maps.Map(document.getElementById('map'), {
-    center:  {lat: <%= @course.lat %>, lng: <%= @course.lng %>},
-    zoom: 15,
-  });
-
-   marker = new google.maps.Marker({
-    position:  {lat: <%= @course.lat %>, lng: <%= @course.lng %>},
-    map: map
-  });
-}
-</script>
-  
-  
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56I1wI-fEG9_sBEeQ4EiErJYdKXvFQS4&callback=initMap" async defer></script>
   
   
   
