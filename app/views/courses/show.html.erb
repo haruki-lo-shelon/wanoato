@@ -64,7 +64,7 @@ function initMap() {
        })();
       
       
-      if((<%= @course.lat2.present? %>) && (<%= @course.lng2.present? %>)){
+      
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat2 %>, lng: <%= @course.lng2 %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
@@ -72,37 +72,9 @@ function initMap() {
             map: map 
           });
        })();
-      }
       
-      if((<%= @course.lat3.present? %>) && (<%= @course.lng3.present? %>)){
-        ( function() { 
-          let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat3 %>, lng: <%= @course.lng3 %>}); // 緯度経度のデータ作成
-          let marker = new google.maps.Marker({ 
-            position: markerLatLng, 
-            map: map 
-          });
-      })();
-      }
       
-      if((<%= @course.lat4.present? %>) && (<%= @course.lng4.present? %>)){
-        ( function() { 
-          let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat4 %>, lng: <%= @course.lng4 %>}); // 緯度経度のデータ作成
-          let marker = new google.maps.Marker({ 
-            position: markerLatLng, 
-            map: map 
-          });
-      })();
-      }
       
-      if((<%= @course.lat5.present? %>) && (<%= @course.lng5.present? %>)){
-        ( function() { 
-          let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat5 %>, lng: <%= @course.lng5 %>}); // 緯度経度のデータ作成
-          let marker = new google.maps.Marker({ 
-            position: markerLatLng, 
-            map: map 
-          });
-      })();
-      }
       //複数マーカー ここまで  
   }
 </script>
