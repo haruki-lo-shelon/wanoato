@@ -26,11 +26,11 @@
 
 ## 内容
 
-<h3>投稿一覧ページ</h3>
+### 投稿一覧ページ
 ![輪の跡1](https://user-images.githubusercontent.com/84504567/137007706-d0a708d4-68c6-415a-bea4-8c7aa093a03e.png)
 
-<h3>投稿詳細ページ</h3>
+### 投稿詳細ページ
 ![輪の跡2](https://user-images.githubusercontent.com/84504567/137007840-e161d91c-9898-4de0-b9ce-c1045ab6b69e.png)
 
-<h3>投稿詳細ページ（マップ）</h3>
+### 投稿詳細ページ（マップ）
 ![輪の跡3](https://user-images.githubusercontent.com/84504567/137007926-de08317d-a853-45ce-a3d1-5d37f5c240f8.png)
