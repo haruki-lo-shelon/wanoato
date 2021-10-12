@@ -55,7 +55,7 @@ function initMap() {
       let transitLayer = new google.maps.TransitLayer();
       transitLayer.setMap(map);
 
-      <%= if @course.lat != nil && @course.lng != nil then %>
+      <%= if @course.lat != nil then %>
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat %>, lng: <%= @course.lng %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
@@ -65,7 +65,7 @@ function initMap() {
        })();
        <% end %>
       
-      <%= if @course.lat2 != nil && @course.lng2 != nil then%>
+      <%= if @course.lat2 != nil then%>
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat2 %>, lng: <%= @course.lng2 %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
