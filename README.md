@@ -15,7 +15,7 @@
 
 `$ git clone https://github.com/haruki-lo-shelon/wanoato` 
 
-##使用技術
+## 使用技術
 
 <li>Ruby ruby 2.6.3p62</li>
 <li>Rails 6.0.3</li>
@@ -24,7 +24,7 @@
 <li>Cloudinary</li>
 <li>Google Maps API</li>
 
-##内容
+## 内容
 
 <h3>投稿一覧ページ</h3>
 ![輪の跡](https://user-images.githubusercontent.com/84504567/137007706-d0a708d4-68c6-415a-bea4-8c7aa093a03e.png)
