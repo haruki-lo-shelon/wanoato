@@ -56,7 +56,7 @@ function initMap() {
       transitLayer.setMap(map);
 
       //複数マーカー ここから
-      if((<%= @course.lat %>) && (<%= @course.lng %>)){
+      if((<%= @course.lat %> != null ) && (<%= @course.lng %> != null)){
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat %>, lng: <%= @course.lng %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
@@ -66,7 +66,7 @@ function initMap() {
        })();
       }
       
-      if((<%= @course.lat2 %>) && (<%= @course.lng2 %>)){
+      if((<%= @course.lat2 %> != null) && (<%= @course.lng2 %> != null)){
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat2 %>, lng: <%= @course.lng2 %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
@@ -76,34 +76,34 @@ function initMap() {
        })();
       }
       
-      if((<%= @course.lat3 %>) && (<%= @course.lng3 %>)){
+      if((<%= @course.lat3 %> != null) && (<%= @course.lng3 %> != null)){
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat3 %>, lng: <%= @course.lng3 %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
             position: markerLatLng, 
             map: map 
           });
-       })();
+      })();
       }
       
-      if((<%= @course.lat4 %>) && (<%= @course.lng4 %>)){
+      if((<%= @course.lat4 %> != null) && (<%= @course.lng4 %> != null)){
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat4 %>, lng: <%= @course.lng4 %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
             position: markerLatLng, 
             map: map 
           });
-       })();
+      })();
       }
       
-      if((<%= @course.lat5 %>) && (<%= @course.lng5 %>)){
+      if((<%= @course.lat5 %> != null) && (<%= @course.lng5 %> != null)){
         ( function() { 
           let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat5 %>, lng: <%= @course.lng5 %>}); // 緯度経度のデータ作成
           let marker = new google.maps.Marker({ 
             position: markerLatLng, 
             map: map 
           });
-       })();
+      })();
       }
       //複数マーカー ここまで  
   }
