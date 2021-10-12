@@ -5,7 +5,7 @@
 自分だけのサイクリングコースを開拓しましょう！</br>
 </p>
 
-![輪の跡](https://user-images.githubusercontent.com/84504567/137002771-63105e33-7a56-4b85-afcd-2d7dd6da7516.JPG)
+![輪の跡](https://user-images.githubusercontent.com/84504567/137007706-d0a708d4-68c6-415a-bea4-8c7aa093a03e.png)
 
 ## 🌐 App URL
 
