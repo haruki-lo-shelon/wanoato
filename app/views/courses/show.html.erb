@@ -48,28 +48,28 @@ function initMap(){
     map: map
   });
   
-  if (@course.lat2 && @course.lng2){
+  if (<%= @course.lat2 %> && <%= @course.lng2 %>){
     marker = new google.maps.Marker({
       position:  {lat: <%= @course.lat2 %>, lng: <%= @course.lng2 %>},
       map: map
     });
   }
   
-  if (@course.lat3 && @course.lng3){
+  if (<%= @course.lat3 %> && <%= @course.lng3 %>){
     marker = new google.maps.Marker({
       position:  {lat: <%= @course.lat3 %>, lng: <%= @course.lng3 %>},
       map: map
     });
   }
   
-  if (@course.lat4 && @course.lng4){
+  if (<%= @course.lat4 %> && <%= @course.lng4 %>){
     marker = new google.maps.Marker({
       position:  {lat: <%= @course.lat4 %>, lng: <%= @course.lng4 %>},
       map: map
     });
   }
   
-  if (@course.lat5 && @course.lng5){
+  if (<%= @course.lat5 %> && <%= @course.lng5 %>){
     marker = new google.maps.Marker({
       position:  {lat: <%= @course.lat5 %>, lng: <%= @course.lng5 %>},
       map: map
