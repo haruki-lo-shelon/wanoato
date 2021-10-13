@@ -30,13 +30,15 @@ li {
 }
 
 #map {
-  width: 50%;
+  width: 70%;
+  height: 600px;
 }
 
 // スマホレスポンシブ
 @media screen and (max-width:640px){
   #map {
     width: 95%;
+    height: 400px;
   }
   
   .feature {
