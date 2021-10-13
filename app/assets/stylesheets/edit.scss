@@ -19,8 +19,31 @@ input[type="text"] {
 }
 
 #course_feature {
-  width: 90%;
-  height: 64px;
+  width: 50%;
+  height: 100px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+input [id="address"] {
+  margin-top: 10px;
+}
+
+#map {
+  width: 50%;
+}
+
+@media screen and (max-width:640px){
+  #map {
+    width: 95%;
+  }
+  
+  #course_feature {
+    width: 95%;
+    height: 100px;
+  }
 }
 
 input[type="submit"] {

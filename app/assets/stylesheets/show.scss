@@ -14,7 +14,7 @@ h1 {
 
 .feature {
   background-color: #FEFEFE;
-  width: 250px;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   border: 6px double #333333;
@@ -30,7 +30,21 @@ li {
 }
 
 #map {
-  margin-left: auto;
-  margin-right: auto;
+  width: 50%;
+}
+
+@media screen and (max-width:640px){
+  #map {
+    width: 95%;
+  }
+  
+  .feature {
+    background-color: #FEFEFE;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 6px double #333333;
+    padding: 10px;
+  }
 }
 
