@@ -33,6 +33,7 @@ input [id="address"] {
   width: 50%;
 }
 
+// スマホレスポンシブ
 @media screen and (max-width:640px){
   #map {
     width: 95%;
