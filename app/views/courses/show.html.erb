@@ -16,10 +16,9 @@
       <p><%= @course.feature %></p>
     </div>
     <br>
-    
+  
+  <!--チェックポイントマップ-->
   <h4>チェックポイント</h4>
-  <!--<input id="address" type="textbox" value="GeekSalon">-->
-  <!--<input type="button" value="Encode" onclick="codeAddress()">-->
   
   <div id='map'></div>
     
@@ -46,7 +45,7 @@
               ]
              }
             ];
-  
+        // マップ生成
         let map = new google.maps.Map(document.getElementById('map'), {
             zoom: 5.5,
             styles: styles,
@@ -54,7 +53,8 @@
         });
         let transitLayer = new google.maps.TransitLayer();
         transitLayer.setMap(map);
-  
+        
+        // マーカー生成
         <% if @course.lat != nil && @course.lng != nil then %>
           ( function() { 
             let markerLatLng = new google.maps.LatLng({lat: <%= @course.lat %>, lng: <%= @course.lng %>}); // 緯度経度のデータ作成
