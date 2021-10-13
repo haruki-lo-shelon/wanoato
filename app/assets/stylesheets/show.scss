@@ -32,6 +32,8 @@ li {
 #map {
   width: 70%;
   height: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // スマホレスポンシブ
@@ -39,6 +41,8 @@ li {
   #map {
     width: 95%;
     height: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .feature {
