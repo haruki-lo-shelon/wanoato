@@ -23,6 +23,7 @@
 <li>AWS Cloud9</li>
 <li>Cloudinary</li>
 <li>Google Maps API</li>
+<li>Heroku 7.59.0</li>
 
 ## 内容
 
