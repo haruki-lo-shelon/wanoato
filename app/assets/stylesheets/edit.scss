@@ -33,12 +33,14 @@ input [id="address"] {
 
 #map {
   width: 50%;
+  height: 600px;
 }
 
 // スマホレスポンシブ
 @media screen and (max-width:640px){
   #map {
     width: 95%;
+    height: 300px;
   }
   
   #course_feature {
