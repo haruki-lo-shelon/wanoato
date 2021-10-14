@@ -81,19 +81,19 @@ footer {
 
 
 /*サインアップ*/
-.user_field {
+.field {
 	position: relative;
 	width: 80%;
 	margin: 40px 3%;
 }
-.user_field input[type='text'] {
+.field input[type='text'] {
 	font: 15px/24px sans-serif;
 	box-sizing: border-box;
 	width: 100%;
 	letter-spacing: 1px;
 	padding-left: 4em;
 }
-.user_field input[type='text']:focus {
+.field input[type='text']:focus {
 	outline: none;
 }
 .ef {
