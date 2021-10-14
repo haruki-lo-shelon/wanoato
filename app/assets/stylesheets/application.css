@@ -136,3 +136,11 @@ footer {
 	border: 1px solid #1b2538;
 	background: transparent;
 }
+
+input[type="submit"] {
+    width: 150px;
+    height: 30px;
+    color: white;
+    margin-bottom: 32px;
+    background-color: #474797;
+}
