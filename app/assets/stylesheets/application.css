@@ -141,14 +141,16 @@ footer {
     width: 150px;
     height: 30px;
     color: white;
+    font-weight: bold;
     margin-bottom: 32px;
     background-color: #474797;
 }
 
-.user_edit button_to {
+.delete button_to {
   width: 150px;
   height: 30px;
   color: white;
+  font-weight: bold;
   margin-bottom: 32px;
   background-color: #bb1d1d;
 }
