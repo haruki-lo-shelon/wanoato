@@ -99,6 +99,35 @@ footer {
 	border: 1px solid #da3c41;
 	outline: none;
 	box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+
+}
+
+.field input[type='email'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 4em;
+	background: white;
+}
+.field input[type='email']:focus {
+	border: 1px solid #da3c41;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
+}
+
+.field input[type='password'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 4em;
+	background: white;
+}
+.field input[type='password']:focus {
+	border: 1px solid #da3c41;
+	outline: none;
+	box-shadow: 0 0 5px 1px rgba(218,60,65, .5);
 }
 .ef {
 	position: relative;
