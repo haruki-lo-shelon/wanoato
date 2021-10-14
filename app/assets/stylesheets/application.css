@@ -76,3 +76,65 @@ footer {
   position: fixed;
   justify-content: flex-end;
 }
+
+
+
+
+/*サインアップ*/
+.user_field {
+	position: relative;
+	width: 80%;
+	margin: 40px 3%;
+}
+.user_field input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 4em;
+}
+.user_field input[type='text']:focus {
+	outline: none;
+}
+.ef {
+	position: relative;
+	padding: 7px 15px;
+	border: 0;
+	border: 1px solid #1b2538;
+	background: transparent;
+}
+.ef ~ .focus_bg {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	transition: 0.4s;
+	background-color: transparent;
+}
+.ef:focus {
+	border: 1px solid #da3c41;
+}
+.ef:focus ~ .focus_bg, .user_field.ef ~ .focus_bg {
+	width: 100%;
+	transition: 0.4s;
+	background-color: rgba(218,60,65,.3);
+}
+.ef ~ label {
+	position: absolute;
+	z-index: -1;
+	top: 10px;
+	left: 14px;
+	width: 100%;
+	transition: 0.3s;
+	letter-spacing: 0.5px;
+	color: #aaaaaa;
+}
+.ef:focus ~ label, .user_field.ef ~ label {
+	font-size: 12px;
+	top: -18px;
+	left: 0;
+	transition: 0.3s;
+	color: #da3c41;
+}
