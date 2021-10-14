@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'sign_up', :media => "all" %>
+
 <h2>サインアップ</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -5,7 +7,8 @@
 
   <div class="field">
     <%= f.label :名前 %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, :class => 'ef', autofocus: true %>
+    <span class="focus_bg"></span>
   </div>
   
   <div class="field">
