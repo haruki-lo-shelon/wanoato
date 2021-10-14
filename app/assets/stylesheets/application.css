@@ -137,10 +137,18 @@ footer {
 	background: transparent;
 }
 
-input[type="submit"] {
+.user_edit input[type="submit"] {
     width: 150px;
     height: 30px;
     color: white;
     margin-bottom: 32px;
     background-color: #474797;
+}
+
+.user_edit button_to {
+  width: 150px;
+  height: 30px;
+  color: white;
+  margin-bottom: 32px;
+  background-color: #bb1d1d;
 }
