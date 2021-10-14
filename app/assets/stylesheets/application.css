@@ -24,6 +24,7 @@ header {
   justify-content: space-between;
   align-items: center;
   box-shadow: 2px 2px 4px gray;
+  z-index: 1;
 }
 header a {
   color: white; 
@@ -103,38 +104,38 @@ footer {
 	border: 1px solid #1b2538;
 	background: transparent;
 }
-.ef ~ .focus_bg {
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 100%;
-	transition: 0.4s;
-	background-color: transparent;
+/*.ef ~ .focus_bg {*/
+/*	position: absolute;*/
+/*	z-index: -1;*/
+/*	top: 0;*/
+/*	left: 0;*/
+/*	width: 0;*/
+/*	height: 100%;*/
+/*	transition: 0.4s;*/
+/*	background-color: transparent;*/
 }
 .ef:focus {
 	border: 1px solid #da3c41;
 }
-.ef:focus ~ .focus_bg, .user_field.ef ~ .focus_bg {
-	width: 100%;
-	transition: 0.4s;
-	background-color: rgba(218,60,65,.3);
-}
-.ef ~ label {
-	position: absolute;
-	z-index: -1;
-	top: 10px;
-	left: 14px;
-	width: 100%;
-	transition: 0.3s;
-	letter-spacing: 0.5px;
-	color: #aaaaaa;
-}
-.ef:focus ~ label, .user_field.ef ~ label {
-	font-size: 12px;
-	top: -18px;
-	left: 0;
-	transition: 0.3s;
-	color: #da3c41;
-}
+/*.ef:focus ~ .focus_bg, .user_field.ef ~ .focus_bg {*/
+/*	width: 100%;*/
+/*	transition: 0.4s;*/
+/*	background-color: rgba(218,60,65,.3);*/
+/*}*/
+/*.ef ~ label {*/
+/*	position: absolute;*/
+/*	z-index: -1;*/
+/*	top: 10px;*/
+/*	left: 14px;*/
+/*	width: 100%;*/
+/*	transition: 0.3s;*/
+/*	letter-spacing: 0.5px;*/
+/*	color: #aaaaaa;*/
+/*}*/
+/*.ef:focus ~ label, .user_field.ef ~ label {*/
+/*	font-size: 12px;*/
+/*	top: -18px;*/
+/*	left: 0;*/
+/*	transition: 0.3s;*/
+/*	color: #da3c41;*/
+/*}*/
