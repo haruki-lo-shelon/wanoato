@@ -9,7 +9,7 @@
    <%= submit_tag '検索'  %>
 <% end %>
 
-<%= link_to "コース開拓へ", new_course_path %>
+<div class="course_create"><%= link_to "コース開拓へ", new_course_path %></div>
 <div class="courses-container">
   <% @courses.each do |t| %>
     <div class="wanoato">
