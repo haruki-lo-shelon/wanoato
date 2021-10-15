@@ -154,3 +154,14 @@ footer {
   margin-bottom: 32px;
   background-color: #bb1d1d;
 }
+
+
+@media screen and (max-width:640px){
+  header li {
+    height: 80px;
+    list-style: none;
+    margin-right: 20px;
+    margin-top: 28px;
+  }
+}
+
