@@ -2,10 +2,15 @@
     text-align:center
 }
 
+form {
+  margin-bottom: 20px;
+}
+
 a {
   text-align:center
 }
 
+//「コース開拓へ」
 .course_create a {
   width: 150px;
   height: 30px;
@@ -13,6 +18,8 @@ a {
   font-weight: bold;
   margin-bottom: 32px;
   background-color: #474797;
+  padding: 3px;
+  border: 6px double #ffffff;
 }
 
 .courses-container {
