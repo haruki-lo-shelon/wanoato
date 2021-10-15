@@ -155,6 +155,14 @@ footer {
   background-color: #bb1d1d;
 }
 
+.user_new input[type="submit"] {
+    width: 150px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 32px;
+    background-color: #474797;
+}
 
 @media screen and (max-width:640px){
   header li {
