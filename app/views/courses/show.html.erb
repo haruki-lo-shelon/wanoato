@@ -13,7 +13,7 @@
     <%= image_tag @course.image4_url, size: "250x200" if @course.image4? %>
     <%= image_tag @course.image5_url, size: "250x200" if @course.image5? %>
     <div class="feature">
-      <p><%= @course.feature %></p>
+      <%=safe_join(@course.feature.split("\n"),tag(:br))%>
     </div>
     <br>
   
