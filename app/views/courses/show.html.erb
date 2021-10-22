@@ -157,6 +157,10 @@
   
   
   <br>
-  <%= link_to "コース一覧に戻る", courses_path %>&nbsp;
-  <%= link_to "編集する", edit_course_path(@course.id) %>
+  <%= link_to "コース一覧に戻る", courses_path %>
+  <% if user_signed_in? && current_user.id == t.user_id %>
+    &nbsp;
+    <%= link_to "編集する", edit_course_path(@course.id) %>
+  <% end %>
+  
 </div>
