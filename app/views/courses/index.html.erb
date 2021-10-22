@@ -14,7 +14,12 @@
   <% @courses.each do |t| %>
     <div class="wanoato">
       <!--ユーザー名-->
-      <p><a href="/users/<%= t.user.id %>"><%= t.user.name %></a></p>
+      <% if user_signed_in? %>
+        <p><a href="/users/<%= t.user.id %>"><%= t.user.name %></a></p>
+      <% else %>
+        <p><%= t.user.name %></p>
+      <% end %>
+      
       <!--写真-->
       <div class="picture">
         <%= image_tag t.image_url if t.image? %>
