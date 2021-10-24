@@ -7,11 +7,11 @@
     ＜<%= @course.area %>＞
     <p>【開拓者】<a href="/users/<%= @course.user.id %>"><%= @course.user.name %></a></p>
     <!--写真-->
-    <%= image_tag @course.image_url, size: if @course.image? %>
-    <%= image_tag @course.image2_url, size: if @course.image2? %>
-    <%= image_tag @course.image3_url, size: if @course.image3? %>
-    <%= image_tag @course.image4_url, size: if @course.image4? %>
-    <%= image_tag @course.image5_url, size: if @course.image5? %>
+    <%= image_tag @course.image_url if @course.image? %>
+    <%= image_tag @course.image2_url if @course.image2? %>
+    <%= image_tag @course.image3_url if @course.image3? %>
+    <%= image_tag @course.image4_url if @course.image4? %>
+    <%= image_tag @course.image5_url if @course.image5? %>
     <div class="feature">
       <%=safe_join(@course.feature.split("\n"),tag(:br))%>
     </div>
