@@ -85,7 +85,7 @@
     <%= f.text_area :feature, :size => "30x2" %>
   </div>
   
-  <p>下のマップで場所を検索して（緯度, 経度）をチェックポイントの欄にコピペしてください。</p>
+  <p>下のマップで場所を検索すると自動的に緯度・経度が登録されます。</p>
   <div class="field">
     <h4>チェックポイント１</h4>
     <%= f.label :lat,"緯度" %>
@@ -123,57 +123,123 @@
     <%= f.text_field :lng5, id: :lng5 %>
     </br>
   </div>
-  
 
 <input id="address" type="textbox">
 <input type="button" value="検索" onclick="codeAddress()">
 
-<div id="display">ここに（緯度, 経度）が出ます。上のチェックポイントの欄にコピペしてください。</div>
-
 <div id='map'></div>
 
 <script>
+//初期マップの設定
 let map
-let geocoder
-// 下の1行を追加 
-const display = document.getElementById('display')
-
+let marker
 function initMap(){
   geocoder = new google.maps.Geocoder()
 
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 40.7828, lng:-73.9653},
-    zoom: 12,
-  });
+    center:  {lat: 35.6803997, lng:139.7690174},  //東京
+    zoom: 15,
 
-  marker = new google.maps.Marker({
-    position:  {lat: 40.7828, lng:-73.9653},
-    map: map
   });
 }
 
+//検索後のマップ作成
+let geocoder
+let aft
 function codeAddress(){
   let inputAddress = document.getElementById('address').value;
-
   geocoder.geocode( { 'address': inputAddress}, function(results, status) {
     if (status == 'OK') {
-      map.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
+        //マーカーが複数できないようにする
+        if (aft == true){
+            marker.setMap(null);
+        }
 
-      display.textContent = "検索結果(緯度, 経度)：" + results[ 0 ].geometry.location
+        //新しくマーカーを作成する
+        map.setCenter(results[0].geometry.location);
+            marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            draggable: true // ドラッグ可能にする
+        });
+
+        //二度目以降か判断
+        aft = true
+
+        //検索した時に緯度経度を入力する
+        if(document.getElementById('lat').value.length === 0){
+          document.getElementById('lat').value = results[0].geometry.location.lat();
+          document.getElementById('lng').value = results[0].geometry.location.lng();
+        }else if(document.getElementById('lat2').value.length === 0){
+          document.getElementById('lat2').value = results[0].geometry.location.lat();
+          document.getElementById('lng2').value = results[0].geometry.location.lng();
+        }else if(document.getElementById('lat3').value.length === 0){
+          document.getElementById('lat3').value = results[0].geometry.location.lat();
+          document.getElementById('lng3').value = results[0].geometry.location.lng();
+        }else if(document.getElementById('lat4').value.length === 0){
+          document.getElementById('lat4').value = results[0].geometry.location.lat();
+          document.getElementById('lng4').value = results[0].geometry.location.lng();
+        }else if(document.getElementById('lat5').value.length === 0){
+          document.getElementById('lat5').value = results[0].geometry.location.lat();
+          document.getElementById('lng5').value = results[0].geometry.location.lng();
+        }
+
+        // マーカーのドロップ（ドラッグ終了）時のイベント
+        google.maps.event.addListener( marker, 'dragend', function(ev){
+            // イベントの引数evの、プロパティ.latLngが緯度経度
+            document.getElementById('lat').value = ev.latLng.lat();
+            document.getElementById('lng').value = ev.latLng.lng();
+        });
     } else {
       alert('該当する結果がありませんでした：' + status);
     }
   });   
 }
+
 </script>
+
+<!--<script>-->
+<!--let map-->
+<!--let geocoder-->
+<!--下の1行を追加 -->
+<!--const display = document.getElementById('display')-->
+
+<!--function initMap(){-->
+<!--  geocoder = new google.maps.Geocoder()-->
+
+<!--  map = new google.maps.Map(document.getElementById('map'), {-->
+<!--    center: {lat: 40.7828, lng:-73.9653},-->
+<!--    zoom: 12,-->
+<!--  });-->
+
+<!--  marker = new google.maps.Marker({-->
+<!--    position:  {lat: 40.7828, lng:-73.9653},-->
+<!--    map: map-->
+<!--  });-->
+<!--}-->
+
+<!--function codeAddress(){-->
+<!--  let inputAddress = document.getElementById('address').value;-->
+
+<!--  geocoder.geocode( { 'address': inputAddress}, function(results, status) {-->
+<!--    if (status == 'OK') {-->
+<!--      map.setCenter(results[0].geometry.location);-->
+<!--      var marker = new google.maps.Marker({-->
+<!--          map: map,-->
+<!--          position: results[0].geometry.location-->
+<!--      });-->
+
+<!--      display.textContent = "検索結果(緯度, 経度)：" + results[ 0 ].geometry.location-->
+<!--    } else {-->
+<!--      alert('該当する結果がありませんでした：' + status);-->
+<!--    }-->
+<!--  });   -->
+<!--}-->
+<!--</script>-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA56I1wI-fEG9_sBEeQ4EiErJYdKXvFQS4&callback=initMap" async defer></script>
   
   <div class="post">
-    <%= f.submit "コースを投稿する" %>
+    <%= f.submit "コースを投稿する", class: "btn btn-primary" %>
   </div>
 <% end %>
 

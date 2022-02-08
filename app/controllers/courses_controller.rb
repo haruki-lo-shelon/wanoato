@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
         search = params[:search]
         @courses = Course.joins(:user).where("area LIKE ? OR course_name LIKE ?", "%#{search}%", "%#{search}%").order(id: "DESC")
       else
-        @courses = Course.all.order(id: "DESC")
+        @courses = Course.all
       end
   end
 
