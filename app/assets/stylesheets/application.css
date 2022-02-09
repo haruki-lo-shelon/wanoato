@@ -172,5 +172,9 @@ footer {
     margin-right: 20px;
     margin-top: 28px;
   }
+  
+  footer {
+    height: 50px;
+  }
 }
 
