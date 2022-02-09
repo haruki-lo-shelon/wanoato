@@ -22,16 +22,20 @@
       
       <!--写真-->
       <div class="picture">
-        <%= image_tag t.image_url if t.image? %>
+        <%= image_tag t.image_url, class: "card-img-top" if t.image? %>
       </div>
       <div class="main-box">
         <div class="left-container">
           <!--コース名-->
-          <div class="course_name"><%= t.course_name %></div>
+          <div class="course_name">
+            <%= t.course_name %>
+          </div>
           <!--エリア-->
+          <div class="card-text">
           <% if t.area? %>
             ＜<%= t.area %>＞
           <% end %>
+          </div>
         </div>
         <!--いいね・詳細・編集・削除-->
         <div class="right-container">

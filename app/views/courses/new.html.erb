@@ -85,7 +85,12 @@
     <%= f.text_area :feature, :size => "30x2" %>
   </div>
   
-  <p>下のマップで場所を検索すると自動的に緯度・経度が登録されます。</p>
+  <p>検索すると自動的に緯度・経度が登録されます。5つまで登録可能です。</p>
+  <p>一番下にマップがあるのでそちらも参照してください。</p>
+  
+  <input id="address" type="textbox">
+  <input type="button" value="検索" onclick="codeAddress()">
+  
   <div class="field">
     <h4>チェックポイント１</h4>
     <%= f.label :lat,"緯度" %>
@@ -93,7 +98,7 @@
     </br>
     <%= f.label :lng,"経度" %>
     <%= f.text_field :lng, id: :lng %>
-    </br>
+    
     <h4>チェックポイント２</h4>
     <%= f.label :lat2,"緯度" %>
     <%= f.text_field :lat2, id: :lat2 %>
@@ -123,9 +128,6 @@
     <%= f.text_field :lng5, id: :lng5 %>
     </br>
   </div>
-
-<input id="address" type="textbox">
-<input type="button" value="検索" onclick="codeAddress()">
 
 <div id='map'></div>
 

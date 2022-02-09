@@ -95,6 +95,7 @@ footer {
 	padding-left: 4em;
 	background: white;
 }
+
 .field input[type='text']:focus {
 	border: 1px solid #da3c41;
 	outline: none;
